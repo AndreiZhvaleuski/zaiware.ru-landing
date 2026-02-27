@@ -73,6 +73,21 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+
+      # Display extracted metadata in pipeline logs
+      - name: Display Docker metadata
+        run: |
+          echo "=== Docker Image Metadata ==="
+          echo "Tags:"
+          echo "${{ steps.meta.outputs.tags }}"
+          echo ""
+          echo "Labels:"
+          echo "${{ steps.meta.outputs.labels }}"
+          echo ""
+          echo "JSON:"
+          echo "${{ steps.meta.outputs.json }}"
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
