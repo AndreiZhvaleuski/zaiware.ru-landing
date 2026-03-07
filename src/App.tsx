@@ -1,10 +1,8 @@
-import { ComponentExample } from "@/components/component-example";
-import { ThemeProvider } from "./components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export function App() {
   return (
     <ThemeProvider>
-      <ComponentExample />
     </ThemeProvider>
   );
 }
