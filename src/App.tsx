@@ -1,10 +1,5 @@
-import { ThemeProvider } from "@/components/theme-provider";
+import { Typewriter } from "@/components/typewriter";
 
-export function App() {
-  return (
-    <ThemeProvider>
-    </ThemeProvider>
-  );
+export default function App() {
+  return <Typewriter />;
 }
-
-export default App;
